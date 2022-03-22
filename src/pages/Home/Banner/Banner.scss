@@ -1,0 +1,117 @@
+// And from the left
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 12em 0 0 0 var(--hover);
+}
+.offer-Btn:hover,
+.offer-Btn:focus {
+  box-shadow: inset 10em 0 0 0 var(--hover);
+}
+.doctor-Btn:hover,
+.doctor-Btn:focus {
+  box-shadow: inset 12em 0 0 0 var(--hover);
+}
+.patient-Btn:hover,
+.patient-Btn:focus {
+  box-shadow: inset 12em 0 0 0 var(--hover);
+}
+.newsletter-Btn:hover,
+.newsletter-Btn:focus {
+  box-shadow: inset 14em 0 0 0 var(--hover);
+}
+
+
+//=== Set button colors
+// If you wonder why use Sass vars or CSS custom properties...
+  // Make a map with the class names and matching colors
+$colors: (
+  slide: #ffffff, 
+  offer-Btn:#ffffff,
+  doctor-Btn:#ffffff,
+  patient-Btn:#ffffff,
+  newsletter-Btn:#ffffff,
+
+);
+
+// Sass variables compile to a static string; CSS variables are dynamic and inherited
+  // Loop through the map and set CSS custom properties using Sass variables
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: rgb(10, 10, 10);
+  }
+}
+
+// Basic button styles
+.slide {
+  background-color: #F2A54A;
+  border: 1px solid #F2A54A;
+  font: inherit;
+  line-height: 1;
+  width: 70%;
+  color: #fff;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.offer-Btn {
+  background-color: #063B6F;
+  border: 1px solid #063B6F;
+  font: inherit;
+  line-height: 1;
+  width: 60%;
+  color: #fff;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.doctor-Btn {
+  background-color: #10DEFD;
+  border: 1px solid #10DEFD;
+  font: inherit;
+  line-height: 1;
+  width: 60%;
+  color: #fff;
+  padding: 0.8em 1em;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.patient-Btn {
+  background-color: #10DEFD;
+  border: 1px solid #10DEFD;
+  font: inherit;
+  line-height: 1;
+  width: 60%;
+  color: #0071DC;
+  padding: 0.8em 1em;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.newsletter-Btn {
+  background-color: #10DEFD;
+  border: 1px solid #10DEFD;
+  font: inherit;
+  line-height: 1;
+  width: 20%;
+  color: #fff;
+  padding: 0.8em 1em;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
