@@ -15,6 +15,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 // import required modules
 import { Autoplay, FreeMode, Navigation } from "swiper";
+import { Link } from 'react-router-dom';
 
 const doctorinfo = [
     {
@@ -167,7 +168,7 @@ export default function DoctorCarusel() {
                                                 justifyContent: 'space-around',
                                                 padding: '10px'
                                             }}>
-                                                <Box className='doctor-btn'><span className='btn-text'>View Profile</span></Box>
+                                                <Link to={'/doctor'}><Box className='doctor-btn'><span className='btn-text'>View Profile</span></Box></Link>
                                                 <Box className='doctor-btn'><span className='btn-text'>Book Now</span></Box>
                                             </Box>
 
@@ -179,12 +180,6 @@ export default function DoctorCarusel() {
                     }
 
                 </Grid>
-
-
-
-
-
-
             </Swiper>
         </>
     );

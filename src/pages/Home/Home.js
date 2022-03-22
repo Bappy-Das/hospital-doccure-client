@@ -1,5 +1,5 @@
 import React from 'react';
-import Headers from '../Shared/Headers/Headers';
+// import Headers from '../Shared/Headers/Headers';
 // import HeadersDropdown from '../Shared/Headers/HeadersDropdown';
 
 import Banner from './Banner/Banner';
@@ -10,12 +10,12 @@ import Specialities from './Specialities/Specialities';
 import AvailablrFeature from './AvailableFeature/AvailableFeature';
 import BestDoctor from './BestDoctor/BestDoctor';
 import Newsletter from './Newsletter/Newsletter';
-import Footer from '../Shared/Footer/Footer';
+// import Footer from '../Shared/Footer/Footer';
 
 const Home = () => {
     return (
         <div>
-            <Headers></Headers>
+            {/* <Headers></Headers> */}
             {/* <HeadersDropdown></HeadersDropdown> */}
 
             <Banner></Banner>
@@ -26,7 +26,7 @@ const Home = () => {
             <BestDoctor></BestDoctor>
             <AvailablrFeature></AvailablrFeature>
             <Newsletter></Newsletter>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };

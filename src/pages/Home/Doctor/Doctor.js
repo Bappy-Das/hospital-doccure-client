@@ -1,8 +1,9 @@
 import { Button, Container, Grid, Rating, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import './Doctors.css'
-
+import './Doctor.css'
+import doctor from '../../../images/doctor-thumb-02.jpg'
+import { AiOutlinePhone } from "react-icons/ai";
 const Doctors = () => {
     return (
         <Box>
@@ -11,17 +12,30 @@ const Doctors = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    padding: '5px'
+                    // padding: '5px'
                 }}>
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'space-between',
+                        p: 4
                     }}>
                         <Box>
-                            img
+                            <Box
+                                component="img"
+                                sx={{
+                                    height: '150px',
+                                    width: '150px',
+                                    mr: 5
+
+                                }}
+                                alt="The house from the offer."
+                                src={doctor}
+                            />
                         </Box>
-                        <Box>
+                        <Box sx={{
+                            textAlign: 'start',
+                            // p: 4
+                        }}>
                             <Typography variant="h6" gutterBottom component="div">
                                 Dr. Darren Elder
                             </Typography>
@@ -35,12 +49,29 @@ const Doctors = () => {
                             <Rating name="read-only" value={4} readOnly />
                             <Typography component="legend">icon Newyork, USA</Typography>
 
-                            <Button variant="outlined">Dental Fillings</Button>
-                            <Button variant="outlined">Dental Fillings</Button>
+                            <Box sx={{
+                                display: 'flex',
+                                justifyContent: 'space-evenly',
+                                mt: 3
+                            }}>
+                                <Button variant="outlined">
+                                    <Typography variant="caption" display="block" gutterBottom>
+                                        caption text
+                                    </Typography>
+                                </Button>
+                                <Button variant="outlined">
+                                    <Typography variant="caption" display="block" gutterBottom>
+                                        caption text
+                                    </Typography>
+                                </Button>
+                            </Box>
 
                         </Box>
                     </Box>
-                    <Box>
+                    <Box sx={{
+                        textAlign: 'start',
+                        // p: 4
+                    }}>
                         <Typography variant="subtitle2" gutterBottom component="div">
                             icon  99%
                         </Typography>
@@ -53,13 +84,18 @@ const Doctors = () => {
                         <Typography variant="subtitle2" gutterBottom component="div">
                             $100 per hour
                         </Typography>
-                        <Box>
-                            <Button variant="outlined">icon btn</Button>
-                            <Button variant="outlined">icon btn</Button>
-                            <Button variant="outlined">icon btn</Button>
-                            <Button variant="outlined">icon btn</Button>
+                        <Box sx={{
+                            display: 'flex',
+                            justifyContent: 'space-around'
+                        }}>
+                            <Button sx={{ p: 1 }} variant="outlined"> <AiOutlinePhone /> </Button>
+                            <Button sx={{ p: 1 }} variant="outlined"> <AiOutlinePhone /> </Button>
+                            <Button sx={{ p: 1 }} variant="outlined"> <AiOutlinePhone /> </Button>
+                            <Button sx={{ p: 1 }} variant="outlined"> <AiOutlinePhone /> </Button>
+
+
                         </Box>
-                        <Button variant="contained">Book Appointment</Button>
+                        <Button sx={{ mt: 2 }} variant="contained">Book Appointment</Button>
                     </Box>
                 </Box>
             </Container>
